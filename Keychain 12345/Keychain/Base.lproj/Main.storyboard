@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Keychain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Zq-Qn-2Wp">
+                                <rect key="frame" x="70" y="210" width="241" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4Y-qA-fWT">
+                                <rect key="frame" x="70" y="316" width="241" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zg-Oa-mAE">
+                                <rect key="frame" x="130" y="413" width="127" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Вход"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bmX-5w-YlA"/>
+                                    <segue destination="zaJ-LE-kON" kind="show" identifier="login" id="HnU-am-65X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-FH-Epd">
+                                <rect key="frame" x="70" y="491" width="241" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Добавить пароль"/>
+                                <connections>
+                                    <action selector="addPasswordButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JtV-Be-3TV"/>
+                                    <segue destination="GBd-BA-4wq" kind="show" identifier="addpassword" id="Bgr-AB-hpt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="d4Y-qA-fWT" id="zX7-uV-XK5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330.43478260869568" y="-173.4375"/>
+        </scene>
+        <!--Logged In View Controller-->
+        <scene sceneID="mVq-Ro-c1M">
+            <objects>
+                <viewController id="zaJ-LE-kON" customClass="LoggedInViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V6G-X4-pk7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRZ-XA-QJe">
+                                <rect key="frame" x="0.0" y="772" width="414" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="sBP-UB-8mV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Добавить картинку"/>
+                                <connections>
+                                    <action selector="addPicture:" destination="zaJ-LE-kON" eventType="touchUpInside" id="yvp-J7-qnI"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Md-Wo-fmE">
+                                <rect key="frame" x="50" y="100" width="314" height="572"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Fw-ED-VFH">
+                                <rect key="frame" x="50" y="100" width="314" height="572"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vHw-Ds-9t4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LRZ-XA-QJe" firstAttribute="top" secondItem="3Fw-ED-VFH" secondAttribute="bottom" constant="100" id="04g-1I-FX2"/>
+                            <constraint firstItem="LRZ-XA-QJe" firstAttribute="top" secondItem="8Md-Wo-fmE" secondAttribute="bottom" constant="100" id="4kl-lv-aRc"/>
+                            <constraint firstItem="3Fw-ED-VFH" firstAttribute="leading" secondItem="vHw-Ds-9t4" secondAttribute="leading" constant="50" id="CDm-Hn-Mis"/>
+                            <constraint firstItem="vHw-Ds-9t4" firstAttribute="trailing" secondItem="8Md-Wo-fmE" secondAttribute="trailing" constant="50" id="TWm-Lx-oMZ"/>
+                            <constraint firstItem="vHw-Ds-9t4" firstAttribute="trailing" secondItem="LRZ-XA-QJe" secondAttribute="trailing" id="U9X-bW-VbR"/>
+                            <constraint firstItem="8Md-Wo-fmE" firstAttribute="leading" secondItem="vHw-Ds-9t4" secondAttribute="leading" constant="50" id="fTX-P1-F5k"/>
+                            <constraint firstItem="vHw-Ds-9t4" firstAttribute="trailing" secondItem="3Fw-ED-VFH" secondAttribute="trailing" constant="50" id="gY5-Qw-UOd"/>
+                            <constraint firstAttribute="bottom" secondItem="LRZ-XA-QJe" secondAttribute="bottom" id="hfa-tR-4di"/>
+                            <constraint firstItem="LRZ-XA-QJe" firstAttribute="leading" secondItem="vHw-Ds-9t4" secondAttribute="leading" id="qD0-XV-2uy"/>
+                            <constraint firstItem="8Md-Wo-fmE" firstAttribute="top" secondItem="vHw-Ds-9t4" secondAttribute="top" constant="100" id="qUX-bd-l18"/>
+                            <constraint firstItem="3Fw-ED-VFH" firstAttribute="top" secondItem="vHw-Ds-9t4" secondAttribute="top" constant="100" id="udL-S3-kZh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2hl-b7-k4k"/>
+                    <connections>
+                        <outlet property="imageView" destination="8Md-Wo-fmE" id="rsD-GK-g63"/>
+                        <outlet property="imageViewSecond" destination="3Fw-ED-VFH" id="kqR-qo-cJ0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wd-wg-O0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421.73913043478262" y="-493.52678571428567"/>
+        </scene>
+        <!--Add Password View Controller-->
+        <scene sceneID="wXp-46-1mj">
+            <objects>
+                <viewController id="GBd-BA-4wq" customClass="AddPasswordViewController" customModule="Keychain" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JzB-a3-RZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Повторите введенный пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RBM-Je-rAA" customClass="Add">
+                                <rect key="frame" x="87" y="507" width="241" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sb-Vg-azg">
+                                <rect key="frame" x="87" y="627" width="241" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Сохранить пароль"/>
+                                <connections>
+                                    <action selector="savePasswordTapped:" destination="GBd-BA-4wq" eventType="touchUpInside" id="r3W-S2-KeK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Введите пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqs-pm-bOb">
+                                <rect key="frame" x="87" y="417" width="241" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G4S-HY-Tzd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="abw-hx-jzW"/>
+                    <connections>
+                        <outlet property="controlPasswordTextField" destination="RBM-Je-rAA" id="jDK-JL-H0U"/>
+                        <outlet property="passwordTextField" destination="kqs-pm-bOb" id="3kk-3T-rqd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lRI-F5-I33" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421.73913043478262" y="190.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
